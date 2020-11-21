@@ -1,0 +1,57 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% include 'accounts/status.html' %}
+
+<div class="row">
+	<div class="col-md-5">
+		<h5 style="text-align: center;">Students</h5>
+		<div class="card card-body" style="background-color: #343A40;">
+			<!-- <a class="btn btn-warning  btn-sm btn-block" href="">Add student</a> -->
+			<table class="table table-sm table-dark">
+				<tr>
+					<th></th>
+					<th>Student</th>
+					<th>Phone</th>
+				</tr>
+
+				{% for customer in customers %}
+				<tr>
+					<td><a class="btn btn-sm btn-warning" href="{% url 'customer' customer.id %}">View</a></td>
+					<td>{{customer.name}}</td>
+					<td>{{customer.phone}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<h5 style="text-align: center;">Books Info</h5>
+		<div class="row">
+			<div class="card card-body" style="background-color: #343A40;">
+				<table class="table table-sm table-dark">
+					<tr>
+						<th>Book</th>
+						<th>Date Taken</th>
+						<th>Status</th>
+						<th>Update</th>
+						<th>Remove</th>
+					</tr>
+
+					{% for order in orders %}
+					<tr>
+						<td>{{order.product}}</td>
+						<td>{{order.date_created}}</td>
+						<td>{{order.status}}</td>
+						<td><a class="btn btn-sm btn-warning" href="{% url 'update_order' order.id %}">Update</a></td>
+						<td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' order.id %}">Delete</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+		</div>
+
+		{% endblock %}
