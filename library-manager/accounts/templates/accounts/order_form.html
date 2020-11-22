@@ -6,7 +6,7 @@
 <div class="row">
 	<div style="margin-left: 450px; margin-top: 160px" class="col-md-6">
 		<div class="card card-body">
-
+			<h3>Update Order</h3><br>
 			<form class="myForm" action="" method="POST">
 				{% csrf_token %}
 				{{ form.management_form }}
@@ -15,7 +15,7 @@
 					<hr>
 				{% endfor %}
 				
-				<input class="btn btn-warning" type="submit" value="Update" name="Submit">
+				<input class="btn btn-warning" type="submit" value="Submit" name="Submit">
 			</form>
 
 		</div>

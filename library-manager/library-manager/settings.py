@@ -26,7 +26,7 @@ SECRET_KEY = 'e&8vfxqt402__$r%%@cz*ic)aeee&x41tfs9=!3j#=i8dck+rj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','library-manager-software.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
