@@ -27,11 +27,18 @@ class Book(models.Model):
 			('Mysterious', 'Mysterious'),
 			('Comedy', 'Comedy'),
 			('Tragedy', 'Tragedy'),
-			) 
-
+			('Literature', 'Literature'),
+			)
+	IS_THERE = (
+		('Available','Available',),
+		('Unavailable', 'Unavailable',)
+	)
 	name = models.CharField(max_length=200, null=True)
 	price = models.FloatField(null=True)
 	category = models.CharField(max_length=200, null=True, choices=CATEGORY)
+	is_there = models.CharField(max_length=200, null=True, choices=IS_THERE)
+	author = models.CharField(max_length=500, null=True)
+	pages = models.IntegerField(null=True)
 	description = models.CharField(max_length=200, null=True, blank=True)
 	date_created = models.DateTimeField(auto_now_add=True, null=True)
 	tags = models.ManyToManyField(Tag)
